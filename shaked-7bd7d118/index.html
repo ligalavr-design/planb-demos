@@ -287,13 +287,13 @@ async function runAfter(){
 
 /* E: area page */
 function area(){
-  const v=($("ai").value||"").trim()||"העיר שלך";const e=esc(v);
+  const v=($("ai").value||"").trim()||"העיר שלך";const e=esc(v),bb=v==="העיר שלך"?"בעיר שלך":"ב"+e;
   $("au").textContent="shaked-electrician.example/area/"+(v==="העיר שלך"?"city":encodeURIComponent(v));
-  $("ap").innerHTML=`<div class="eb">חשמלאי · שקד</div><h3>חשמלאי ב${e}</h3>
-  <div>תקלות, התקנות ולוחות חשמל ב${e} והסביבה. מגיעים, מאבחנים ומסבירים לפני שמתחילים.</div>
+  $("ap").innerHTML=`<div class="eb">חשמלאי · שקד</div><h3>חשמלאי ${bb}</h3>
+  <div>תקלות, התקנות ולוחות חשמל ${bb} והסביבה. מגיעים, מאבחנים ומסבירים לפני שמתחילים.</div>
   <ul><li>תקלות וקצרים, כולל קריאות דחופות</li><li>החלפה והרחבה של לוח חשמל</li><li>שקעים, תאורה ונקודות חשמל חדשות</li></ul>
   <div class="btnrow"><span class="b1">בקשת ביקור בוואטסאפ</span><span class="b2">שלח הקלטה או תמונה של התקלה</span></div>
-  <div class="faq"><b>עובדים גם ב${e}?</b> כן, זה אזור השירות שלנו. כתבו עכשיו ונחזור אליכם עם מועד.</div>`}
+  <div class="faq"><b>עובדים גם ${bb}?</b> כן, זה אזור השירות שלנו. כתבו עכשיו ונחזור אליכם עם מועד.</div>`}
 
 runVoice();startChat();runAfter();area();
 </script>
