@@ -79,6 +79,11 @@ section.s .lede{max-width:31em;color:#33433a;margin:0 0 26px}
 .bar{height:12px;border-radius:7px;background:var(--sage);overflow:hidden;margin-top:5px}.bar i{display:block;height:100%;background:var(--g2);border-radius:7px}
 .bar.low i{background:var(--gold)}
 .alert{background:#f8efd5;border:1px solid #ecd9a2;border-radius:14px;padding:11px 14px;margin-top:12px;font-size:15px}
+.sm{margin:0;padding:5px 14px;font-size:14px}
+.cert{display:none;margin-top:14px;border:2px solid var(--g);border-radius:14px;padding:16px;background:#fff;text-align:center}
+.cert h4{margin:0 0 2px;font-family:"Frank Ruhl Libre",serif;font-size:22px;color:var(--g)}
+.cert .r{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-top:1px dashed var(--line);text-align:right;font-size:15px}
+.reply{display:none;margin-top:8px;background:var(--wa);border-radius:10px;padding:8px 11px;font-size:15px;white-space:pre-wrap}
 .toast{margin-top:12px;background:var(--sage);color:var(--g);border-radius:12px;padding:10px 14px;font-weight:600;display:none}
 
 .end{padding:60px 0 56px;text-align:center;border-top:1px solid var(--line);margin-top:48px}
@@ -177,6 +182,52 @@ footer{text-align:center;font-size:12.5px;color:var(--mut);padding:0 20px 30px}
     </div></div>
   </div></section>
 
+  <!-- 5 -->
+  <section class="s" id="five"><div class="split">
+    <div>
+      <div class="who">אחרי ההתקנה · אחריות</div>
+      <h2>כל התקנה נרשמת עם האחריות שלה, והתעודה יוצאת ללקוח.</h2>
+      <p class="lede">בסיום ההתקנה נשמר כרטיס אחריות ללקוח: מה הותקן, מתי, מי התקין ומה המספר הסידורי של העמדה. מהכרטיס יוצאת תעודת אחריות מסודרת בשם העסק שלכם, וכשהלקוח מתקשר אחרי שנה, כל הפרטים מולכם.</p>
+    </div>
+    <div class="pc" style="display:block"><div class="panel">
+      <h3>כרטיס אחריות</h3>
+      <div class="line"><span>לקוח</span><span class="note">דוגמה: משפחת לוי</span></div>
+      <div class="line"><span>מה הותקן</span><span class="note">עמדת טעינה וקו ייעודי מהלוח</span></div>
+      <div class="line"><span>תאריך ההתקנה</span><span class="note">נרשם בסיום ההתקנה</span></div>
+      <div class="line"><span>התקין</span><span class="note">נדב</span></div>
+      <div class="line"><span>מספר סידורי של העמדה</span><span class="note">נרשם בהתקנה</span></div>
+      <div class="line"><span>תנאי האחריות</span><span class="tag">התנאים שלכם</span></div>
+      <button class="btn" style="margin-top:14px;padding:12px 22px;font-size:16px" onclick="cert()">הפיקו תעודת אחריות</button>
+      <div class="cert" id="cert" role="region" aria-label="תעודת אחריות לדוגמה">
+        <h4>תעודת אחריות</h4>
+        <div class="note" style="margin-bottom:8px">טומי טים אלקטריק · מסמך לדוגמה</div>
+        <div class="r"><span class="k">לקוח</span><b>משפחת לוי</b></div>
+        <div class="r"><span class="k">מה הותקן</span><b>עמדת טעינה וקו ייעודי</b></div>
+        <div class="r"><span class="k">מספר סידורי</span><b>מכרטיס האחריות</b></div>
+        <div class="r"><span class="k">תנאי האחריות</span><b>לפי התנאים שלכם</b></div>
+      </div>
+      <div class="toast" id="t5" role="status">בהדגמה: התעודה נשמרת בכרטיס הלקוח ויוצאת אליו בוואטסאפ כקובץ.</div>
+    </div></div>
+  </div></section>
+
+  <!-- 6 -->
+  <section class="s" id="six"><div class="split flip">
+    <div>
+      <div class="who">נדב · פניות מפייסבוק ומשיחות</div>
+      <h2>כל פנייה מקבלת מענה, גם כשאתם על סולם.</h2>
+      <p class="lede">ליד שהשאיר פרטים בפייסבוק מקבל תשובה ראשונה ובקשה לתמונה של הלוח, בלי לחכות שתתפנו. ומי שהתקשר ולא נענה? לחיצה אחת פותחת איתו צ'אט בוואטסאפ, עם הודעה מוכנה, כדי שתמשיכו משם.</p>
+      <p class="hint">לחצו על «תשובה» או על «פתחו צ'אט».</p>
+    </div>
+    <div class="pc" style="display:block"><div class="panel">
+      <h3>פניות חדשות</h3>
+      <div class="line" style="display:block"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><span><b>דנה</b> <span class="tag">פייסבוק</span><br><span class="note">«כמה עולה עמדה לבית פרטי?»</span></span><button class="btn ghost sm" onclick="fbReply(this)">תשובה</button></div>
+        <div class="reply">היי דנה, תודה שפנית לטומי טים. המחיר תלוי בלוח החשמל ובמרחק עד מקום העמדה, אז אשמח לתמונה של הלוח ולסרטון קצר מהלוח עד המקום, ונחזור אלייך עם הצעה מסודרת.</div></div>
+      <div class="line" style="display:block"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><span><b>אבי</b> <span class="tag w">שיחה שלא נענתה</span><br><span class="note">התקשר בבוקר</span></span><button class="btn ghost sm" onclick="waOpen(this,'אבי')">פתחו צ'אט</button></div></div>
+      <div class="line" style="display:block"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><span><b>רונית</b> <span class="tag">פייסבוק</span><br><span class="note">«יש לי תלת פאזי, זה משנה?»</span></span><button class="btn ghost sm" onclick="waOpen(this,'רונית')">פתחו צ'אט</button></div></div>
+      <div class="toast" id="t6" role="status"></div>
+    </div></div>
+  </div></section>
+
   <div class="end">
     <h2>זה מה ששמענו מכם. מה שלא נכון, נתקן יחד.</h2>
     <p>כל מסך כאן נבנה סביב מה שסיפרתם, ואתם מחליטים מה נשאר ומה משתנה.</p>
@@ -228,6 +279,11 @@ runChat();
     const di=+b.dataset.k.split("-")[0],si=+b.dataset.k.split("-")[1];
     const t=$("t3");t.style.display="block";
     t.textContent=`נקבע: יום ${days[di]}, ${slots[si]}. מבצע: ${$("who").value}. בהדגמה: ללקוח יוצאת הודעה, ותזכורת יום לפני ההתקנה.`})})();
+function cert(){$("cert").style.display="block";$("t5").style.display="block"}
+function fbReply(b){const r=b.closest(".line").querySelector(".reply");r.style.display="block";b.textContent="נשלחה ✓";b.disabled=true;
+  const t=$("t6");t.style.display="block";t.textContent="בהדגמה: הליד מפייסבוק נכנס לרשימת הפניות שלכם, והתשובה יוצאת אליו בוואטסאפ."}
+function waOpen(b,n){b.textContent="נפתח ✓";const t=$("t6");t.style.display="block";
+  t.textContent=`בהדגמה: נפתח צ'אט בוואטסאפ עם ${n}, עם הודעה מוכנה: «היי ${n}, כאן טומי טים. ראינו שפנית אלינו, איך אפשר לעזור?»`}
 </script>
 </body>
 </html>
