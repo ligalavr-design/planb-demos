@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#f4f1ec">
+<title>דלקוב ארונות · מקום אחד להצעה, להזמנה ולסטטוס</title>
+<style>
+:root{--ink:#22262b;--mut:#5b6470;--bg:#f4f1ec;--paper:#fff;--line:#e0dad0;--brand:#2f4a5a;--brand2:#4d7185;--acc:#8a5a14;--ok:#2e6b45;--okbg:#e4f0e8}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:17px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 60px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:14px;color:var(--mut)}
+.tag{border:1px solid var(--line);border-radius:20px;padding:2px 12px;font-size:12px}
+h1{font-size:clamp(28px,7vw,46px);line-height:1.2;margin:14px 0 10px;color:var(--brand)}
+h2{font-size:clamp(21px,5vw,28px);margin:0 0 6px;color:var(--brand)}
+.lede{max-width:34em;color:#36414b;margin:0 0 6px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:22px}
+.who{color:var(--acc);font-weight:700;font-size:14px}
+.grid{display:grid;gap:12px}
+@media(min-width:700px){.g2{grid-template-columns:1fr 1fr}.g5{grid-template-columns:2fr 1fr 1fr 1fr auto}}
+label{display:block;font-size:14px;color:var(--mut);margin-bottom:3px}
+input,select{width:100%;font:inherit;padding:10px 12px;border:1px solid #c9c2b5;border-radius:10px;background:#fff;color:var(--ink);min-height:44px}
+button{font:inherit;cursor:pointer;min-height:44px}
+.btn{background:var(--brand);color:#fff;border:0;border-radius:12px;padding:10px 20px;font-weight:600}
+.btn.alt{background:#fff;color:var(--brand);border:1.5px solid var(--brand)}
+.btn.sm{padding:6px 12px;min-height:36px;font-size:14px}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:16px}
+th,td{text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;color:var(--mut);font-weight:600}
+.tw{overflow-x:auto}
+.empty{color:var(--mut);padding:14px 0}
+.pending{color:var(--acc);font-weight:600;white-space:nowrap}
+.quote{border:1.5px dashed #b9b09f;border-radius:12px;padding:16px;margin-top:14px;background:#fcfbf8}
+.quote h3{margin:0 0 4px;font-size:20px;color:var(--brand)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0;padding:0;list-style:none}
+.steps li{flex:1 1 130px;border:1.5px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:15px;color:var(--mut);background:#fff}
+.steps li.done{background:var(--okbg);border-color:#9cc7ab;color:var(--ok);font-weight:600}
+.steps li.now{border-color:var(--brand);color:var(--brand);font-weight:700;background:#eef4f7}
+.note{font-size:14px;color:var(--mut);margin-top:10px}
+.toast{margin-top:12px;padding:10px 14px;border-radius:10px;background:#eef4f7;color:var(--brand);display:none}
+.toast.on{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><b>Plan B</b><span class="tag">הדגמה · נתוני דוגמה</span></div>
+
+  <h1>מקום אחד להצעה, להזמנה ולסטטוס</h1>
+  <p class="lede">כך נראה כלי ההצעות לדלקוב ארונות: בונים הצעה מהקטלוג שלכם, היא הופכת להזמנה, ורואים בכל רגע באיזו תחנה ההזמנה נמצאת. כל מה שמופיע כאן הוא דוגמה. אין כאן מחירים: הם ייטענו ממחירון דלקוב שלכם.</p>
+
+  <section id="s1">
+    <div class="who">שלב 1 · הצעה</div>
+    <h2>בונים הצעה מהקטלוג</h2>
+    <p class="lede">הסוגים הם אלה שבאתר דלקוב ארונות. מוסיפים שורה לכל פריט.</p>
+    <div class="grid g2" style="margin-top:12px">
+      <div><label for="cust">שם הלקוח (דוגמה)</label><input id="cust" value="לקוחה לדוגמה" autocomplete="off"></div>
+      <div><label for="branch">סניף</label>
+        <select id="branch"><option>אור יהודה (סניף ראשי)</option><option>לוד</option><option>ראשון לציון</option><option>נתניה</option><option>פתח תקווה</option><option>ירושלים</option><option>רמת גן / בני ברק</option><option>חיפה / קרית אתא</option><option>באר שבע</option></select></div>
+    </div>
+    <div class="grid g5" style="margin-top:12px;align-items:end">
+      <div><label for="cat">סוג</label>
+        <select id="cat"><option>ארונות הזזה</option><option>דלתות הזזה "משקופים"</option><option>ארונות הזזה עם טלוויזיה</option><option>ארונות דלתות הזזה</option><option>ארונות דלתות פתיחה</option><option>חדרי ארונות</option><option>עבודות מיוחדות</option></select></div>
+      <div><label for="w">רוחב (ס"מ)</label><input id="w" type="number" min="1" inputmode="numeric" value="240"></div>
+      <div><label for="h">גובה (ס"מ)</label><input id="h" type="number" min="1" inputmode="numeric" value="250"></div>
+      <div><label for="q">כמות</label><input id="q" type="number" min="1" inputmode="numeric" value="1"></div>
+      <div><button class="btn" id="add" type="button">הוספת שורה</button></div>
+    </div>
+    <div class="tw"><table aria-label="שורות ההצעה"><thead><tr><th>סוג</th><th>מידות</th><th>כמות</th><th>מחיר</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div id="none" class="empty">עדיין אין שורות. הוסיפו שורה למעלה.</div>
+    <div class="quote" id="quote" hidden>
+      <h3>הצעת מחיר (דוגמה)</h3>
+      <div id="qhead" class="note" style="margin:0 0 8px"></div>
+      <div id="qbody"></div>
+      <p class="note">סך הכול: <span class="pending">ייטען ממחירון דלקוב</span></p>
+    </div>
+    <button class="btn" id="toOrder" type="button" style="margin-top:14px" disabled>הפיכה להזמנה</button>
+  </section>
+
+  <section id="s2">
+    <div class="who">שלב 2 · הזמנה וסטטוס</div>
+    <h2>איפה ההזמנה עכשיו</h2>
+    <p class="lede">לכל הזמנה תחנות קבועות. כולם, במשרד ובסניף, רואים את אותו סטטוס.</p>
+    <div id="orderInfo" class="note">עוד אין הזמנה. אחרי שמפיקים אותה משלב 1 היא מופיעה כאן.</div>
+    <ol class="steps" id="steps" aria-label="תחנות ההזמנה"></ol>
+    <div class="grid g2">
+      <div><label for="sign">אישור הלקוח</label>
+        <select id="sign"><option value="branch">בסניף</option><option value="remote">מרחוק</option></select></div>
+      <div style="align-self:end"><button class="btn alt" id="next" type="button" disabled>לתחנה הבאה</button></div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <p class="note">בהדגמה אין שליחה אמיתית ואין שמירה: סגרתם את העמוד והכול מתאפס.</p>
+  </section>
+
+  <p class="note" style="margin-top:22px">דף הדגמה בלבד, נבנה מהקטלוג הציבורי של דלקוב ארונות. הוא לא מחובר למערכת שלכם ולא שולח הודעות.</p>
+</div>
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var lines=[],order=null,STEPS=['הצעה','הזמנה','מדידה','חזרה למעצבת','אישור הלקוח'];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function render(){
+    $('rows').innerHTML=lines.map(function(l,i){
+      return '<tr><td>'+esc(l.cat)+'</td><td>'+l.w+' × '+l.h+'</td><td>'+l.q+'</td><td><span class="pending">ממחירון</span></td><td><button class="btn alt sm" data-i="'+i+'" type="button" aria-label="הסרת שורה '+(i+1)+'">הסרה</button></td></tr>';
+    }).join('');
+    $('none').style.display=lines.length?'none':'block';
+    $('quote').hidden=!lines.length;
+    $('toOrder').disabled=!lines.length||!!order;
+    $('qhead').textContent='לקוח: '+($('cust').value||'—')+' · סניף: '+$('branch').value;
+    $('qbody').innerHTML='<ul style="margin:0;padding-inline-start:20px">'+lines.map(function(l){return '<li>'+esc(l.cat)+', '+l.w+' × '+l.h+' ס"מ, כמות '+l.q+'</li>'}).join('')+'</ul>';
+  }
+  function steps(){
+    var cur=order?order.step:-1;
+    $('steps').innerHTML=STEPS.map(function(s,i){
+      var c=!order?'':(i<cur?'done':(i===cur?'now':''));
+      var label=s;
+      if(i===4&&order)label=s+' ('+($('sign').value==='remote'?'מרחוק':'בסניף')+')';
+      return '<li class="'+c+'">'+(i<cur?'✓ ':'')+esc(label)+'</li>';
+    }).join('');
+    $('next').disabled=!order||order.step>=STEPS.length-1;
+  }
+  function toast(t){var e=$('toast');e.textContent=t;e.className='toast on'}
+  $('add').onclick=function(){
+    var w=+$('w').value,h=+$('h').value,q=+$('q').value;
+    if(!(w>0&&h>0&&q>0)){toast('יש למלא רוחב, גובה וכמות גדולים מאפס.');return}
+    lines.push({cat:$('cat').value,w:w,h:h,q:q});render();
+  };
+  $('rows').onclick=function(e){var i=e.target.getAttribute('data-i');if(i!==null){lines.splice(+i,1);render()}};
+  $('cust').oninput=render;$('branch').onchange=render;
+  $('toOrder').onclick=function(){
+    order={no:'דוגמה-'+(1000+lines.length),step:1};
+    $('orderInfo').textContent='הזמנה '+order.no+' · '+($('cust').value||'—')+' · '+$('branch').value;
+    render();steps();toast('בהדגמה: כאן ההצעה נשמרת כהזמנה, וכל אחד רואה את הסטטוס שלה.');
+    document.getElementById('s2').scrollIntoView({behavior:'smooth'});
+  };
+  $('next').onclick=function(){
+    if(!order||order.step>=STEPS.length-1)return;order.step++;steps();
+    toast(order.step===STEPS.length-1?'בהדגמה: ההזמנה הגיעה לאישור הלקוח, '+($('sign').value==='remote'?'מרחוק':'בסניף')+'.':'התחנה הנוכחית: '+STEPS[order.step]+'.');
+  };
+  $('sign').onchange=steps;
+  render();steps();
+})();
+</script>
+</body>
+</html>
